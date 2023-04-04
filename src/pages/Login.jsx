@@ -11,12 +11,14 @@ const Login = () => {
 
   return (
     <div>
-        <h1>This is Login Page</h1>
+        <h1>{username}</h1>
         <input onChange={(e) => setNewUsername(e.target.value)} />
         <button onClick={() => {
           dispatch(login({username: newUsername}))
         }}>Submit Login</button>
-        <button>Logout</button>
+        <button onClick={() => {
+          dispatch(logout())
+        }}>Logout</button>
         <Link to='/'>Go to Home</Link>
     </div>
   )
